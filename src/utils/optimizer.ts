@@ -220,14 +220,14 @@ export function optimizeBasket(basket: BasketItem[], stores: Store[],tripPenalty
                 bestSingleStore: bestSingle,
                 bestSplit,
                 recommendation: 'SPLIT',
-                summaryReason: 'Split between ${bestSplit.storeA} and ${bestSplit.storeB}. Gross savings of RM ${bestSplit.grossSavings.toFixed(2)} exceeds the RM ${tripPenalty.toFixed(2)} trip penalty, saving RM ${bestSplit.netSavings.toFixed(2)} net.'
+                summaryReason: `Split between ${bestSplit.storeA} and ${bestSplit.storeB}. Gross savings of RM ${bestSplit.grossSavings.toFixed(2)} exceeds the RM ${tripPenalty.toFixed(2)} trip penalty, saving RM ${bestSplit.netSavings.toFixed(2)} net.`
             };
         } else {
             return {
                 bestSingleStore: bestSingle,
                 bestSplit,
                 recommendation: 'SINGLE',
-                summaryReason: 'Stick to ${bestSingle.storeName} (RM ${bestSingle.totalCost.toFixed(2)}). Splitting saves RM ${bestSplit.grossSavings.toFixed(2)} on items, which does not overcome the RM ${tripPenalty.toFixed(2)} second-trip penalty.'
+                summaryReason: `Stick to ${bestSingle.storeName} (RM ${bestSingle.totalCost.toFixed(2)}). Splitting saves RM ${bestSplit.grossSavings.toFixed(2)} on items, which does not overcome the RM ${tripPenalty.toFixed(2)} second-trip penalty.`
             };
         }
     }
@@ -238,7 +238,7 @@ export function optimizeBasket(basket: BasketItem[], stores: Store[],tripPenalty
             bestSingleStore: null,
             bestSplit,
             recommendation: 'SPLIT',
-            summaryReason: 'No single store has all items. Split between ${bestSplit.storeA} and ${bestSplit.storeB} to fulfill the basket for RM ${bestSplit.effectiveTotalCost.toFixed(2)} total.'
+            summaryReason: `No single store has all items. Split between ${bestSplit.storeA} and ${bestSplit.storeB} to fulfill the basket for RM ${bestSplit.effectiveTotalCost.toFixed(2)} total.`
         };
     }
 
@@ -247,7 +247,7 @@ export function optimizeBasket(basket: BasketItem[], stores: Store[],tripPenalty
         bestSingleStore: bestSingle,
         bestSplit: null,
         recommendation: 'SINGLE',
-        summaryReason: 'Best single store is ${bestSingle!.storeName} at RM ${bestSingle!.totalCost.toFixed(2)}.'
+        summaryReason: `Best single store is ${bestSingle!.storeName} at RM ${bestSingle!.totalCost.toFixed(2)}.`
     }
 
 
