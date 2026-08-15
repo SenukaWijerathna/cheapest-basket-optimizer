@@ -35,11 +35,6 @@ const addItem = (itemName: string) => {
   isSearchFocused.value = false;
 };
 
-const increaseQty = (item: BasketItem) => item.quantity++;
-const decreaseQty = (item: BasketItem, index: number) => {
-  if (item.quantity > 1) item.quantity--;
-  else removeItem(index);
-};
 const removeItem = (index: number) => basket.value.splice(index, 1);
 const clearSearch = () => { searchQuery.value = ''; };
 
