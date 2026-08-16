@@ -6,8 +6,8 @@ export interface Store {
 
 export const MOCK_STORES: Store[] = [
   {
-    id: 'lotus',
-    name: "Lotus's",
+    id: 'Sams',
+    name: "Sam's",
     inventory: {
       'Full Cream Milk 1L': 6.80,
       'Grade A Eggs (10s)': 5.50,
@@ -19,8 +19,8 @@ export const MOCK_STORES: Store[] = [
     },
   },
   {
-    id: 'jaya-grocer',
-    name: 'Jaya Grocer',
+    id: 'james-grocer',
+    name: 'James Grocer',
     inventory: {
       'Full Cream Milk 1L': 8.20,
       'Grade A Eggs (10s)': 6.90,
@@ -32,8 +32,8 @@ export const MOCK_STORES: Store[] = [
     },
   },
   {
-    id: 'village-grocer',
-    name: 'Village Grocer',
+    id: 'uptown-grocer',
+    name: 'Uptown Grocer',
     inventory: {
       'Full Cream Milk 1L': 8.50,
       'Grade A Eggs (10s)': 7.20,
