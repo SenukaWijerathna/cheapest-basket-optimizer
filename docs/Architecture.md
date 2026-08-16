@@ -1,5 +1,10 @@
 # Architecture & Logic
 
+## System Architecture
+The application separates the UI, the optimization algorithm, and the data layer into distinct modules to ensure maintainability.
+
+![System Architecture](basket-optimizer-architecture.png)
+
 ## Tech Stack
 * **Vue 3 + Vite:** Chosen due to fast compilation and reactivity
 * **TypeScript:** To ensure type safety for basket items, store inventory and calculations.
@@ -8,6 +13,7 @@
 
 ## Core Algorithm Logic
 The algorithm evaluates the basket in three phases:
+![Core Algorithm Logic](basket-optimizer-algorithm.png)
 1. **Single Store:** Calculates the total cost if all items are bought at a single store.
 2. **2-Store-Split:** Evaluates every possible 2-store combination which assigns each item to whichever store has the lower price to calculate the raw goods cost excluding trip penalties.
 3. **Trade-off Evaluation:** Adds the user defined `Trip Penalty`to the raw goods cost. If this total is lower than the Single Store baseline, a Split is recommended.
