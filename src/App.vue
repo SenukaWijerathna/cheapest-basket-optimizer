@@ -81,6 +81,7 @@ const getSingleStoreItemPrice = (storeId: string, itemName: string, qty: number)
                 type="text" 
                 v-model="searchQuery"
                 @focus="isSearchFocused = true"
+                @click="isSearchFocused = true"
                 @blur="handleSearchBlur"
                 placeholder="Search items..."
                 class="w-full pl-9 pr-8 py-2 border-2 border-emerald-400 rounded-lg focus:outline-none focus:ring-4 focus:ring-emerald-50 text-sm placeholder-slate-400"
@@ -94,7 +95,7 @@ const getSingleStoreItemPrice = (storeId: string, itemName: string, qty: number)
               <div 
                 v-for="(item, index) in filteredItems" 
                 :key="item"
-                @click="addItem(item)"
+                @mousedown.prevent="addItem(item)"
                 class="px-4 py-2 text-sm cursor-pointer hover:bg-emerald-50 text-slate-700 flex items-center gap-2"
                 :class="{'bg-emerald-100 text-emerald-900 font-medium': index === 0 && searchQuery}"
               >
